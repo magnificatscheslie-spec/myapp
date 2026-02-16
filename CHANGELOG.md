@@ -1,81 +1,91 @@
-# victory-vendor
+## 0.4.5 (Mar 25, 2021)
 
-## 36.9.2
+### chore
 
-## 36.9.1
+- fix: previous release
 
-## 36.9.0
+## 0.4.4 (Mar 18, 2021)
 
-## 36.8.6
+### chore
 
-## 36.8.5
+- bring up all dev deps (incl. eslint and webpack) to the latest
+- move CI to Github actions
+- add linting and building to ci pipeline (in addition to unit testing)
 
-### Patch Changes
+## 0.4.0 (Seq 28, 2018)
 
-- Replace instances of lodash.assign with Object.assign ([#2757](https://github.com/FormidableLabs/victory/pull/2757))
+### feat
 
-## 36.8.4
+- use `decimal.js-light` to handle large number or high precision
 
-## 36.8.3
+## 0.3.2 (Aug 21, 2017)
 
-## 36.8.2
+### fix
 
-## 36.8.1
+- fix `getNiceTickValues` when the number is a scientific notation
 
-## 36.8.0
+## 0.3.1 (Jun 11, 2017)
 
-## 36.7.0
+### fix
 
-## 36.6.12
+- fix `getDigitCount` when the number is a scientific notation
 
-## 36.6.11
+## 0.3.0 (Mar 01, 2017)
 
-## 36.6.10
+### feat
 
-### Patch Changes
+- Add new ticks function `getTickValuesFixedDomain`
 
-- Setup NPM Provenance ([#2590](https://github.com/FormidableLabs/victory/pull/2590))
+## 0.2.3 (Feb 28, 2017)
 
-## 36.6.9
+### fix
 
-### Patch Changes
+- Fix calculation precision of calculateStep, add Arithmetic.modulo
 
-- Setup NPM Provenance ([#2587](https://github.com/FormidableLabs/victory/pull/2587))
+## 0.2.2 (Feb 28, 2017)
 
-## 36.6.8
+### fix
 
-## 36.6.7
+- Fix calculation precision of calculateStep
 
-## 36.6.6
+## 0.2.1 (July 25, 2016)
 
-## 36.6.5
+### fix
 
-### Patch Changes
+- Fix the precision of ticks for decimals
 
-- Export types directly from d3-\* (fixes [#2439](https://github.com/FormidableLabs/victory/issues/2439)) ([#2440](https://github.com/FormidableLabs/victory/pull/2440))
+## 0.2.0 (July 25, 2016)
 
-## 36.6.4
+### feat
 
-### Patch Changes
+- Support `allowDecimals` option
 
-- Allow data accessors to accept any data types (fixes [#2360](https://github.com/FormidableLabs/victory/issues/2360)) ([#2436](https://github.com/FormidableLabs/victory/pull/2436))
+## 0.1.11 (July 19, 2016)
 
-## 36.6.3
+### fix
 
-### Patch Changes
+- Tweak the strategy of calculating step of ticks
 
-- Do not generate \*.js.map sourcemaps (fixes [#2346](https://github.com/FormidableLabs/victory/issues/2346)) ([#2432](https://github.com/FormidableLabs/victory/pull/2432))
+## 0.1.10 (July 07, 2016)
 
-## 36.6.2
+### deps
 
-## 36.6.1
+- update deps and fix lint error
 
-## 36.6.0
+## 0.1.9 (April 08, 2016)
 
-### Patch Changes
+### fix
 
-- Update source code with minor lint-based improvements (see [#2236](https://github.com/FormidableLabs/victory/issues/2236)). ([#2403](https://github.com/FormidableLabs/victory/pull/2403))
+- Fix ticks for interval [0, 0]
 
-## 36.5.3 and earlier
+## 0.1.8 (Feb 04, 2016)
 
-Change history for version 36.5.3 and earlier can be found in our root [CHANGELOG.md](https://github.com/FormidableLabs/victory/blob/main/CHANGELOG.md).
+### refactor
+
+- Refactor the export method
+
+## 0.1.7 (Feb 04, 2016)
+
+### chore
+
+- Optimize npm script commands
