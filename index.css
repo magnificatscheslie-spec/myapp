@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+:root {
+  /* typography */
+  --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --line-height: 1.5;
+  --font-weight: 400;
+
+  /* colors (light mode defaults) */
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --muted: #f1f5f9;
+  --text: #213547;
+  --subtext: #4b5563;
+  --primary: #0ea5a1;
+  --overlay: rgba(0,0,0,0.6);
+
+  /* === THEME PALETTES === */
+  /* Neutral palette */
+  --color-bg: #fcfcff;
+  --color-surface: #e5e8ef;
+  --color-surface-secondary: #c3c8d3;
+  --color-text: #001832;
+  --color-text-secondary: #253142;
+
+  /* Blue palette */
+  --color-primary: #2a90fa;
+  --color-primary-light: #75beff;
+  --color-primary-dark: #0e61ea;
+
+  /* Alert colors (light) */
+  --color-success-bg: #d1fae5;
+  --color-success-text: #065f46;
+  --color-error-bg: #fee2e2;
+  --color-error-text: #991b1b;
+  --color-info-bg: #dbeafe;
+  --color-info-text: #1e40af;
+
+  /* Button colors (light) */
+  --btn-blue-bg: #2a90fa;
+  --btn-blue-text: #fff;
+  --btn-green-bg: #22c55e;
+  --btn-green-text: #fff;
+  --btn-yellow-bg: #eab308;
+  --btn-yellow-text: #fff;
+  --btn-red-bg: #ef4444;
+  --btn-red-text: #fff;
+  --btn-purple-bg: #6366f1;
+  --btn-purple-text: #fff;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* dark-mode variables applied when .dark class is set on <html> or <body> */
+.dark {
+  --bg: #0b1220;
+  --surface: #0f1720;
+  --muted: #0b1220;
+  --text: #e6eef8;
+  --subtext: #9aa7b7;
+  --primary: #38bdf8;
+  --overlay: rgba(2,6,23,0.7);
+
+  /* === THEME PALETTES (dark) === */
+  --color-bg: #001832;
+  --color-surface: #253142;
+  --color-surface-secondary: #3a475a;
+  --color-text: #e5e8ef;
+  --color-text-secondary: #c3c8d3;
+
+  --color-primary: #0e61ea;
+  --color-primary-light: #2a90fa;
+  --color-primary-dark: #001832;
+
+  --color-success-bg: #065f46;
+  --color-success-text: #d1fae5;
+  --color-error-bg: #991b1b;
+  --color-error-text: #fee2e2;
+  --color-info-bg: #1e40af;
+  --color-info-text: #dbeafe;
+
+  --btn-blue-bg: #0e61ea;
+  --btn-blue-text: #e5e8ef;
+  --btn-green-bg: #166534;
+  --btn-green-text: #d1fae5;
+  --btn-yellow-bg: #854d0e;
+  --btn-yellow-text: #fde68a;
+  --btn-red-bg: #991b1b;
+  --btn-red-text: #fee2e2;
+  --btn-purple-bg: #3730a3;
+  --btn-purple-text: #c7d2fe;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-family);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* keep default light values from variables */
+  }
+}
+
+/* some utility defaults that use variables - can be overridden by Tailwind classes */
+.card {
+  background-color: var(--surface);
+  color: var(--text);
+}
+
+.input {
+  background-color: var(--muted);
+  color: var(--text);
+}
+
+/* Simple helper classes to use theme variables in markup */
+.bg-surface { background-color: var(--surface) !important; }
+.bg-muted { background-color: var(--muted) !important; }
+.text-body { color: var(--text) !important; }
+.text-sub { color: var(--subtext) !important; }
+.btn-primary { background-color: var(--primary); color: white; }
+
