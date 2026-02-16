@@ -1,20 +1,70 @@
-# vite ⚡
+# VictoryVendor
 
-> Next Generation Frontend Tooling
+Vendored dependencies for Victory.
 
-- 💡 Instant Server Start
-- ⚡️ Lightning Fast HMR
-- 🛠️ Rich Features
-- 📦 Optimized Build
-- 🔩 Universal Plugin Interface
-- 🔑 Fully Typed APIs
+## Background
 
-Vite (French word for "fast", pronounced `/vit/`) is a new breed of frontend build tool that significantly improves the frontend development experience. It consists of two major parts:
+D3 has released most of its libraries as ESM-only. This means that consumers in Node.js applications can no longer just `require()` anything with a d3 transitive dependency, including much of Victory.
 
-- A dev server that serves your source files over [native ES modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules), with [rich built-in features](https://vite.dev/guide/features.html) and astonishingly fast [Hot Module Replacement (HMR)](https://vite.dev/guide/features.html#hot-module-replacement).
+To help provide an easy path to folks still using CommonJS in their Node.js applications that consume Victory, we now provide this package to vendor in various d3-related packages.
 
-- A [build command](https://vite.dev/guide/build.html) that bundles your code with [Rollup](https://rollupjs.org), pre-configured to output highly optimized static assets for production.
+## Packages
 
-In addition, Vite is highly extensible via its [Plugin API](https://vite.dev/guide/api-plugin.html) and [JavaScript API](https://vite.dev/guide/api-javascript.html) with full typing support.
+We presently provide the following top-level libraries:
+<!-- cat packages/victory-vendor/package.json | egrep '"d3-' | egrep -o 'd3-[^"]*'| sor t-->
 
-[Read the Docs to Learn More](https://vite.dev).
+- d3-ease
+- d3-interpolate
+- d3-scale
+- d3-shape
+- d3-timer
+
+This is the total list of top and transitive libraries we vendor:
+<!-- ls packages/victory-vendor/lib-vendor | sort -->
+
+- d3-array
+- d3-color
+- d3-ease
+- d3-format
+- d3-interpolate
+- d3-path
+- d3-scale
+- d3-shape
+- d3-time
+- d3-time-format
+- d3-timer
+- internmap
+
+Note that this does _not_ include the following D3 libraries that still support CommonJS:
+
+- d3-voronoi
+
+## How it works
+
+We provide two alternate paths and behaviors -- for ESM and CommonJS
+
+### ESM
+
+If you do a Node.js import like:
+
+```js
+import { interpolate } from "victory-vendor/d3-interpolate";
+```
+
+under the hood it's going to just re-export and pass you through to `node_modules/d3-interpolate`, the **real** ESM library from D3.
+
+### CommonJS
+
+If you do a Node.js import like:
+
+```js
+const { interpolate } = require("victory-vendor/d3-interpolate");
+```
+
+under the hood it's going to will go to an alternate path that contains the transpiled version of the underlying d3 library to be found at `victory-vendor/lib-vendor/d3-interpolate/**/*.js`. This futher has internally consistent import references to other `victory-vendor/lib-vendor/<pkg-name>` paths.
+
+Note that for some tooling (like Jest) that doesn't play well with `package.json:exports` routing to this CommonJS path, we **also** output a root file in the form of `victory-vendor/d3-interpolate.js`.
+
+## Licenses
+
+This project is released under the MIT license, but the vendor'ed in libraries include other licenses (e.g. ISC) that we enumerate in our `package.json:license` field.

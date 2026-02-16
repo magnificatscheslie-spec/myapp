@@ -1,166 +1,81 @@
-# Changes
+# victory-vendor
 
+## 36.9.2
 
-## 2.0.2
+## 36.9.1
 
-* Rename bin to `node-which`
+## 36.9.0
 
-## 2.0.1
+## 36.8.6
 
-* generate changelog and publish on version bump
-* enforce 100% test coverage
-* Promise interface
+## 36.8.5
 
-## 2.0.0
+### Patch Changes
 
-* Parallel tests, modern JavaScript, and drop support for node < 8
+- Replace instances of lodash.assign with Object.assign ([#2757](https://github.com/FormidableLabs/victory/pull/2757))
 
-## 1.3.1
+## 36.8.4
 
-* update deps
-* update travis
+## 36.8.3
 
-## v1.3.0
+## 36.8.2
 
-* Add nothrow option to which.sync
-* update tap
+## 36.8.1
 
-## v1.2.14
+## 36.8.0
 
-* appveyor: drop node 5 and 0.x
-* travis-ci: add node 6, drop 0.x
+## 36.7.0
 
-## v1.2.13
+## 36.6.12
 
-* test: Pass missing option to pass on windows
-* update tap
-* update isexe to 2.0.0
-* neveragain.tech pledge request
+## 36.6.11
 
-## v1.2.12
+## 36.6.10
 
-* Removed unused require
+### Patch Changes
 
-## v1.2.11
+- Setup NPM Provenance ([#2590](https://github.com/FormidableLabs/victory/pull/2590))
 
-* Prevent changelog script from being included in package
+## 36.6.9
 
-## v1.2.10
+### Patch Changes
 
-* Use env.PATH only, not env.Path
+- Setup NPM Provenance ([#2587](https://github.com/FormidableLabs/victory/pull/2587))
 
-## v1.2.9
+## 36.6.8
 
-* fix for paths starting with ../
-* Remove unused `is-absolute` module
+## 36.6.7
 
-## v1.2.8
+## 36.6.6
 
-* bullet items in changelog that contain (but don't start with) #
+## 36.6.5
 
-## v1.2.7
+### Patch Changes
 
-* strip 'update changelog' changelog entries out of changelog
+- Export types directly from d3-\* (fixes [#2439](https://github.com/FormidableLabs/victory/issues/2439)) ([#2440](https://github.com/FormidableLabs/victory/pull/2440))
 
-## v1.2.6
+## 36.6.4
 
-* make the changelog bulleted
+### Patch Changes
 
-## v1.2.5
+- Allow data accessors to accept any data types (fixes [#2360](https://github.com/FormidableLabs/victory/issues/2360)) ([#2436](https://github.com/FormidableLabs/victory/pull/2436))
 
-* make a changelog, and keep it up to date
-* don't include tests in package
-* Properly handle relative-path executables
-* appveyor
-* Attach error code to Not Found error
-* Make tests pass on Windows
+## 36.6.3
 
-## v1.2.4
+### Patch Changes
 
-* Fix typo
+- Do not generate \*.js.map sourcemaps (fixes [#2346](https://github.com/FormidableLabs/victory/issues/2346)) ([#2432](https://github.com/FormidableLabs/victory/pull/2432))
 
-## v1.2.3
+## 36.6.2
 
-* update isexe, fix regression in pathExt handling
+## 36.6.1
 
-## v1.2.2
+## 36.6.0
 
-* update deps, use isexe module, test windows
+### Patch Changes
 
-## v1.2.1
+- Update source code with minor lint-based improvements (see [#2236](https://github.com/FormidableLabs/victory/issues/2236)). ([#2403](https://github.com/FormidableLabs/victory/pull/2403))
 
-* Sometimes windows PATH entries are quoted
-* Fixed a bug in the check for group and user mode bits. This bug was introduced during refactoring for supporting strict mode.
-* doc cli
+## 36.5.3 and earlier
 
-## v1.2.0
-
-* Add support for opt.all and -as cli flags
-* test the bin
-* update travis
-* Allow checking for multiple programs in bin/which
-* tap 2
-
-## v1.1.2
-
-* travis
-* Refactored and fixed undefined error on Windows
-* Support strict mode
-
-## v1.1.1
-
-* test +g exes against secondary groups, if available
-* Use windows exe semantics on cygwin & msys
-* cwd should be first in path on win32, not last
-* Handle lower-case 'env.Path' on Windows
-* Update docs
-* use single-quotes
-
-## v1.1.0
-
-* Add tests, depend on is-absolute
-
-## v1.0.9
-
-* which.js: root is allowed to execute files owned by anyone
-
-## v1.0.8
-
-* don't use graceful-fs
-
-## v1.0.7
-
-* add license to package.json
-
-## v1.0.6
-
-* isc license
-
-## 1.0.5
-
-* Awful typo
-
-## 1.0.4
-
-* Test for path absoluteness properly
-* win: Allow '' as a pathext if cmd has a . in it
-
-## 1.0.3
-
-* Remove references to execPath
-* Make `which.sync()` work on Windows by honoring the PATHEXT variable.
-* Make `isExe()` always return true on Windows.
-* MIT
-
-## 1.0.2
-
-* Only files can be exes
-
-## 1.0.1
-
-* Respect the PATHEXT env for win32 support
-* should 0755 the bin
-* binary
-* guts
-* package
-* 1st
+Change history for version 36.5.3 and earlier can be found in our root [CHANGELOG.md](https://github.com/FormidableLabs/victory/blob/main/CHANGELOG.md).
